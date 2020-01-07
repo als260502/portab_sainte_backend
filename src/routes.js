@@ -9,9 +9,9 @@ const paginateMiddleware = require('./app/middlewares/paginate')
 
 const routes = express.Router();
 
-routes.post("/portabilidade/back/sheduler", ShedulerController.store);
-
 routes.post("/portabilidade/back/telefone", SerPredialfoneController.getInformation);
+
+routes.post("/portabilidade/back/sheduler", ShedulerController.store);
 
 routes.get("/portabilidade/back/dashboard/find/:id", DashboardController.find);
 routes.put("/portabilidade/back/dashboard/update", DashboardController.update);

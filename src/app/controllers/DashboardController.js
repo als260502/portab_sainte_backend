@@ -3,9 +3,8 @@ const Sheduler = require("../models/Sheduler");
 module.exports = {
   async find(req, res) {
 
-    console.log("dashboard/find/:id")
-
     const { id } = req.params;
+    console.log(`/portabilidade/back/dashboard/find/${id}`)
 
     const telefone = await Sheduler.findOne({ where: { id } })
 
@@ -16,9 +15,9 @@ module.exports = {
 
   async delete(req, res) {
 
-    console.log("dashboard/delete/:id")
-
     const { id } = req.params;
+
+    console.log(`/portabilidade/back/dashboard/delete/${id}`)
 
     if (id === undefined) return res.status(505).json({ msg: "Nenhum id informado", state: 0 })
 
@@ -40,7 +39,7 @@ module.exports = {
 
   async update(req, res) {
 
-    console.log("dashboard/update/:id")
+    console.log("/portabilidade/back/dashboard/update")
 
     const { id, data, hora } = req.body;
 
@@ -63,5 +62,7 @@ module.exports = {
     }
 
     return res.json({ ok: true });
-  }
+  },
+
+
 };

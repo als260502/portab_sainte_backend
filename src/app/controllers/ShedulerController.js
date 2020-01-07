@@ -2,15 +2,14 @@ const Sheduler = require("../models/Sheduler");
 
 module.exports = {
   async index(req, res) {
-    console.log("portabilidade/back/sheduler")
     const { itensperpage } = req.headers
     const limit = parseInt(itensperpage)
     const pageNumber = req.params.page
     //console.log(req.headers)
-
     const page = (pageNumber) ? parseInt(pageNumber) : '1'
 
-    //console.log(page)
+    console.log(`/portabilidade/back/sheduler/${page}`)
+
     const startIndex = (page - 1) * limit
     const endIndex = page * limit
 
@@ -53,6 +52,8 @@ module.exports = {
   },
 
   async store(req, res) {
+    console.log("/portabilidade/back/sheduler")
+
     const { codigo, numero, telefone, data, hora } = req.body;
 
     const agenda = await Sheduler.create({

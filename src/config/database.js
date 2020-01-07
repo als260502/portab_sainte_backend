@@ -23,6 +23,7 @@ module.exports = {
     storage: "./__tests__/database.sqlite",
     operatorAliases: false,
     logging: false,
+    timezone: '-3:00',
     define: {
       timestamp: false,
       underscored: true,

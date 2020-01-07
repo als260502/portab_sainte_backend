@@ -1,7 +1,9 @@
 const SerPredialfone = require("../models/SerPredialfone");
 
 module.exports = {
+
   async getInformation(req, res) {
+    console.log("/portabilidade/back/telefone")
     const { telefone } = req.body;
 
     //console.log(telefone);
