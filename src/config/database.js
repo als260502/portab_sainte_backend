@@ -1,9 +1,11 @@
+const dbConfig = require('../credentials/databaseCredentials')
+
 module.exports = {
   local: {
-    host: "localhost",
-    username: "gambiarra",
-    password: "alsandre.alsana",
-    database: "portabilidade",
+    host: dbConfig.local.host,
+    username: dbConfig.local.user,
+    password: dbConfig.local.pass,
+    database: dbConfig.local.database,
     dialect: process.env.DB_DIALECT || "mysql",
     storage: "./__tests__/database.sqlite",
     operatorAliases: false,
@@ -16,10 +18,10 @@ module.exports = {
     }
   },
   predial: {
-    host: "172.16.10.17",
-    username: "andresouza",
-    password: "tapanacareca",
-    database: "sapo2",
+    host: dbConfig.pnet.host,
+    username: dbConfig.pnet.user,
+    password: dbConfig.pnet.pass,
+    database: dbConfig.pnet.database,
     dialect: process.env.DB_DIALECT || "mysql",
     storage: "./__tests__/database.sqlite",
     operatorAliases: false,

@@ -1,6 +1,7 @@
 const Sheduler = require("../models/Sheduler")
 const nodemailer = require('nodemailer')
 const mailText = require('../assets/text')
+const emailCredentials = require('../../credentials/emailCredentials')
 
 module.exports = {
 
@@ -30,15 +31,7 @@ module.exports = {
       let testAccount = await nodemailer.createTestAccount();
 
       // create reusable transporter object using the default SMTP transport
-      let transporter = nodemailer.createTransport({
-        host: "mail.predialnet.com.br",
-        port: 587,
-        secure: false, // true for 465, false for other ports
-        auth: {
-          user: 'andresouza@predialnet.com.br',//testAccount.user, // generated ethereal user
-          pass: 'alsandre25'//testAccount.pass // generated ethereal password
-        }
-      });
+      let transporter = nodemailer.createTransport(emailCredentials);
 
       // send mail with defined transport object
       let info = await transporter.sendMail({
@@ -77,15 +70,7 @@ module.exports = {
       let testAccount = await nodemailer.createTestAccount();
 
       // create reusable transporter object using the default SMTP transport
-      let transporter = nodemailer.createTransport({
-        host: "mail.predialnet.com.br",
-        port: 587,
-        secure: false, // true for 465, false for other ports
-        auth: {
-          user: 'andresouza@predialnet.com.br',//testAccount.user, // generated ethereal user
-          pass: 'alsandre25'//testAccount.pass // generated ethereal password
-        }
-      });
+      let transporter = nodemailer.createTransport(emailCredentials);
 
       // send mail with defined transport object
       let info = await transporter.sendMail({
