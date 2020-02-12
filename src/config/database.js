@@ -11,7 +11,8 @@ module.exports = {
     define: {
       timestamp: true,
       underscored: true,
-      underscoredAll: true
+      underscoredAll: true,
+	  timezone: '-03:00',
     }
   },
   predial: {
@@ -23,7 +24,6 @@ module.exports = {
     storage: "./__tests__/database.sqlite",
     operatorAliases: false,
     logging: false,
-    timezone: '-3:00',
     define: {
       timestamp: false,
       underscored: true,

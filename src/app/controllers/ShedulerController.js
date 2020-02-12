@@ -20,7 +20,7 @@ module.exports = {
         offset: startIndex,
         limit: limit,
         order: [
-          ['enviado', 'ASC']
+          ['data', 'DESC']
         ]
 
       })

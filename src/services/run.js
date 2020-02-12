@@ -6,16 +6,18 @@ const dbConfig = require("../database");
 const telefone = async () => {
 
   const today = new Date();
-  const dataAtual = `${today.getFullYear()}-0${today.getMonth() + 1}-0${today.getDate()}`
-  const horaAtual = today.getHours()
-  console.log(dataAtual, horaAtual)
+  const actualDay = today.getDate() > 9 ? today.getDate(): `0${today.getDate()}`
+  const dataAtual = `${today.getFullYear()}-0${today.getMonth() + 1}-${actualDay}`
+  
+  const actualHour = today.getHours() > 9 ? today.getHours(): `0${today.getHours()}`
+  console.log(dataAtual, actualHour)
 
   const t = await Sheduler.findAll({
     attributes: ["id", "codigo", "numero", "telefone"],
     where: {
       data: dataAtual,
       enviado: 0,
-      hora: { [Op.like]: `${horaAtual}%` }
+      hora: { [Op.like]: `%${actualHour}%` }
     }
   })
   t.map(s => {
@@ -26,5 +28,6 @@ const telefone = async () => {
 }
 
 telefone()
+//console.log("ola nessa porra karalho")
 
 

@@ -43,9 +43,9 @@ module.exports = {
       // send mail with defined transport object
       let info = await transporter.sendMail({
         from: '"Andre Souza 👻" <andresouza@predialnet.com.br>', // sender address
-        to: "andresouza@predialnet.com.br", // list of receivers
-        //to: "financeiro@predialnet.com.br, ret.equipamento@predialnet.com.br", // list of receivers
-        //cc: "telefonia@predialnet.com.bt, comercial@predialnet.com.br, telefonia@predialnet.com.br, guijunger@predialnet.com.br, lumamartins@predialnet.com.br",
+        //to: "andresouza@predialnet.com.br", // list of receivers
+        to: "financeiro@predialnet.com.br, ret.equipamento@predialnet.com.br, comercial@predialnet.com.br", // list of receivers
+        cc: "telefonia@predialnet.com.br, edsonjr@predialnet.com.br, guijunger@predialnet.com.br, lumamartins@predialnet.com.br,acm@predialnet.com.br, ",
         subject: `Portabilidade sainte - ${cod}`, // Subject line
         //text: "Hello world?", // plain text body
         html: mailText.mailBody(cod, tel, service) // html body
@@ -90,9 +90,9 @@ module.exports = {
       // send mail with defined transport object
       let info = await transporter.sendMail({
         from: '"Andre Souza 👻" <andresouza@predialnet.com.br>', // sender address
-        to: "andresouza@predialnet.com.br", // list of receivers
-        //to: "financeiro@predialnet.com.br, ret.equipamento@predialnet.com.br", // list of receivers
-        //cc: "telefonia@predialnet.com.bt, comercial@predialnet.com.br, telefonia@predialnet.com.br, guijunger@predialnet.com.br, lumamartins@predialnet.com.br",
+        //to: "andresouza@predialnet.com.br", // list of receivers
+        to: "financeiro@predialnet.com.br, ret.equipamento@predialnet.com.br, comercial@predialnet.com.br", // list of receivers
+        cc: "telefonia@predialnet.com.br, edsonjr@predialnet.com.br, guijunger@predialnet.com.br, lumamartins@predialnet.com.br,acm@predialnet.com.br, ",
         subject: `Portabilidade sainte - ${cod}`, // Subject line
         //text: "Hello world?", // plain text body
         html: mailText.mailBody(cod, tel, service) // html body
